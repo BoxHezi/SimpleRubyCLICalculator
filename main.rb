@@ -1,7 +1,19 @@
 #!/usr/bin/ruby
 
-def menu()
+#Code execute before the program is run
+BEGIN {
     puts "Welcome to the Simple Ruby Command Line Calculator"
+    puts ""
+}
+
+#Code execute when the program is terminated
+END {
+    puts ""
+    puts "Thanks for using this calculator"
+    puts "Existing..."
+}
+
+def menu()
     while (true) do
         #Ruby heredoc
         print <<MENU
@@ -28,7 +40,6 @@ def readSelection()
         #convert user input to upper case
         selection = selection.upcase
         if (selection == "Q")
-            puts "Existing..."
             #return value will be "nil"
             return
         end
