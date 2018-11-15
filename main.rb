@@ -3,6 +3,7 @@
 def menu()
     puts "Welcome to the Simple Ruby Command Line Calculator"
     while (true) do
+        #Ruby heredoc
         print <<MENU
 You can do:
 1. Addition
@@ -28,11 +29,14 @@ def readSelection()
         selection = selection.upcase
         if (selection == "Q")
             puts "Existing..."
+            #return value will be "nil"
             return
         end
 
+        #convert user input to integer
         selection = selection.to_i
 
+        #check if user input is in the specific range
         if (!selection.between?(1, 4))
             puts "Please enter a number from 1 to 4!"
             redo
@@ -53,6 +57,7 @@ def getCalcuateNumber()
     second = gets.chomp
     second = second.to_i
 
+    #multiple return value
     return first, second
 end
 
@@ -68,6 +73,7 @@ def calculate(a, b, indicator)
         result = a * b
         puts "The result of multiplication is: #{result}"
     elsif (indicator == 4)
+        #convert one value to floating point into to perform division
         result = a.to_f / b
         puts "The result of division is: #{result}"
     end
