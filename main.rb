@@ -61,10 +61,10 @@ def readSelection()
 end
 
 def getCalcuateNumber()
-    puts "Please input the first nubmer: "
+    print "Please input the first nubmer: "
     first = gets.chomp
     first = first.to_i
-    puts "Please input the second number: "
+    print "Please input the second number: "
     second = gets.chomp
     second = second.to_i
 
